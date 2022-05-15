@@ -3,27 +3,50 @@
   display: flex;
   align-items: center;
   gap: .5rem;
-  background-image: linear-gradient(to right, #7E55B2, #A769C3);
+  background: linear-gradient(90deg, #7E55B3 -0.37%, #A769C4 100.37%);
   border: none;
   border-radius: .5rem;
   padding: 1em 2rem;
-  line-height: 2.4rem;
   cursor: pointer;
   transition: all .1s;
 
-  &:disabled {
-    background: linear-gradient(to right, #808080, #656565);
-    cursor: not-allowed;
-    tab-index: 0;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: .5rem;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all .1s;
+    opacity: 0;
+  }
 
-    &:hover, &:active{
-      background: linear-gradient(to right, #808080, #656565);
-      transform: translateY(0);
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: .5rem;
+    background: linear-gradient(90deg, #808080 -0.37%, #656565 100.37%);
+    transition: all .2s;
+    opacity: 0;
+  }
+
+  &:disabled {
+    user-select: none;
+    pointer-events: none;
+
+    &::before {
+      opacity: 1;
     }
   }
 
-  &:hover {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(90deg, #7E55B3 -0.37%, #A769C4 100.37%);
+  &:hover::after {
+   opacity: 1;
   }
 
   &:active {
@@ -31,7 +54,11 @@
   }
 }
 
-span {
+.icon {
   font-size: 2.6rem;
   padding-bottom: 1px;
+}
+
+.btn-text {
+  z-index: 2;
 }
