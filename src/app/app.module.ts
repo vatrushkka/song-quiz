@@ -9,6 +9,8 @@ import { ButtonModule } from './shared/components/button/button.module';
 
 import { AppComponent } from './app.component';
 
+import { PlayerGuard } from './shared/services/player-guard';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +23,9 @@ import { AppComponent } from './app.component';
     LogoModule,
     ButtonModule
   ],
-  providers: [],
+  providers: [
+    PlayerGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

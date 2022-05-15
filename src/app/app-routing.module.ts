@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PlayerGuard } from './shared/services/player-guard';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path: 'quiz',
     loadChildren: () => import('./pages/quiz-page/quiz-page.module').then(m => m.QuizPageModule),
+    canActivate: [PlayerGuard]
   }
 ];
 
