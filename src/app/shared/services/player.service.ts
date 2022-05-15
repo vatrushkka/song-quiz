@@ -6,18 +6,27 @@ import { Player } from '../models/Player.model';
   providedIn: 'root',
 })
 export class PlayerService {
-  private _player$ = new BehaviorSubject<Player | null>(null);
-  player$ = this._player$.asObservable();
+
+  // somePlayer = {name: 'player', score: 0}
+  isPlayer = true;
+
+  private _score$ = new BehaviorSubject<number>(0)
+  private _name$ = new BehaviorSubject<string | null>(null)
+  // private _player$ = new BehaviorSubject<Player | null>(this.somePlayer);
+  // private _player$ = new BehaviorSubject<Player | null>(null);
+  player$ = this._name$.asObservable();
+  score$ = this._score$.asObservable();
 
   constructor() {}
 
-  login(name: string): void {
-    this._player$.next({name, score: 0});
-    console.log(name);
+  startGame(name: string): void {
+    this._name$.next(name);
+    this._score$.next(0);
+    this.isPlayer = true;
   }
 
-  isPlayer(): boolean {
-    return true;
+  addPoints(points: number) {
+    this._score$.next(points);
   }
 
   // logout() {

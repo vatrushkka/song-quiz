@@ -1,1 +1,11 @@
+<div class="page-container">
+  <div class="welcome-page-container">
+    <div *ngIf="player$ | async as player">
+      {{ player }}, {{ score }}
+    </div>
 
+    <app-button (buttonClick)="onAddPoints()" text="Add points"></app-button>
+    <app-button (buttonClick)="setUser()" text="setUser"></app-button>
+    <app-button (buttonClick)="nextPage()" text="next page"></app-button>
+  </div>
+</div>

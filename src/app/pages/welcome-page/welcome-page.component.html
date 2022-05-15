@@ -16,7 +16,7 @@
         text="{{'Start quiz' | uppercase}}"
         icon="arrow_right_alt"
         [disabled]="quizForm.invalid"
-        (startQuiz)="startQuiz(quizForm.value.name)"></app-button>
+        (buttonClick)="startQuiz(quizForm.value.name)"></app-button>
     </form>
   </div>
 </div>

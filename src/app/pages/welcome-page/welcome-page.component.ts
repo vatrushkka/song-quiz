@@ -25,7 +25,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   startQuiz(name): void {
-    this.playerService.login(name);
+    this.playerService.startGame(name);
     this.router.navigate(['/quiz']);
   }
 }

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { QuizPageComponent } from './quiz-page.component';
 import { QuizPageRoutingModule } from './quiz-page-routing.module';
+import { ButtonModule } from '../../shared/components/button/button.module';
+
+import { QuizPageComponent } from './quiz-page.component';
 
 @NgModule({
   declarations: [
@@ -9,7 +11,8 @@ import { QuizPageRoutingModule } from './quiz-page-routing.module';
   ],
   imports: [
     CommonModule,
-    QuizPageRoutingModule
+    QuizPageRoutingModule,
+    ButtonModule
   ],
   exports: [
     QuizPageComponent
