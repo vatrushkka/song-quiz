@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'start',
     loadChildren: () => import('./pages/welcome-page/welcome-page.module').then(m => m.WelcomePageModule)
+  },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./pages/quiz-page/quiz-page.module').then(m => m.QuizPageModule),
   }
 ];
 
