@@ -1,4 +1,8 @@
-<button [disabled]="disabled" class="button btn-color">
+<button
+  class="button btn-color"
+  type="button"
+  (click)="onStart($event)"
+  [disabled]="disabled" >
   <span class="btn-text">{{ text }}</span>
   <span *ngIf="icon" class="btn-text icon material-symbols-outlined">
     {{ icon }}

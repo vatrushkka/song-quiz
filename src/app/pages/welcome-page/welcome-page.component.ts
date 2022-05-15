@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { PlayerService } from '../../shared/services/player.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome-page',
@@ -12,10 +14,18 @@ export class WelcomePageComponent implements OnInit {
     name: ['', [Validators.required, Validators.minLength(2)]],
   });
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private playerService: PlayerService,
+    private router: Router
+  ) {
   }
 
   ngOnInit(): void {
   }
 
+  startQuiz(name): void {
+    this.playerService.login(name);
+    this.router.navigate(['/quiz']);
+  }
 }

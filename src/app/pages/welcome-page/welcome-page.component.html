@@ -12,7 +12,11 @@
     <form [formGroup]="quizForm" class="welcome-form align-center-col">
       <input class="welcome-input" formControlName="name" placeholder="{{'Type your name here...' | uppercase}}" />
 
-      <app-button text="{{'Start quiz' | uppercase}}" icon="arrow_right_alt" [disabled]="quizForm.invalid"></app-button>
+      <app-button
+        text="{{'Start quiz' | uppercase}}"
+        icon="arrow_right_alt"
+        [disabled]="quizForm.invalid"
+        (startQuiz)="startQuiz(quizForm.value.name)"></app-button>
     </form>
   </div>
 </div>
