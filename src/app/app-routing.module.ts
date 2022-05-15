@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'quiz',
     loadChildren: () => import('./pages/quiz-page/quiz-page.module').then(m => m.QuizPageModule),
     canActivate: [PlayerGuard]
+  },
+  {
+    path: 'summary',
+    loadChildren: () => import('./pages/summary-page/summary-page.module').then(m => m.SummaryPageModule),
+    canActivate: [PlayerGuard]
   }
 ];
 

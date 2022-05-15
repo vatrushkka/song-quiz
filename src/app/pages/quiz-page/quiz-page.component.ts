@@ -17,7 +17,7 @@ export class QuizPageComponent implements OnInit {
   constructor(private playerService: PlayerService, private router: Router) { }
 
   ngOnInit(): void {
-    this.setUser();
+    // this.setUser();
     this.scoreSub = this.playerService.score$.subscribe(val => {
       this.score = val;
     })

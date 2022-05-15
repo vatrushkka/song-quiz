@@ -25,8 +25,13 @@ export class PlayerService {
     this.isPlayer = true;
   }
 
-  addPoints(points: number) {
+  addPoints(points: number): void {
     this._score$.next(points);
+  }
+
+  playAnotherUser(): void {
+    this._name$.next(null);
+    this._score$.next(0);
   }
 
   // logout() {
