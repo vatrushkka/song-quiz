@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { WelcomePageModule } from './pages/welcome-page/welcome-page.module';
+import { LogoModule } from './shared/components/logo/logo.module';
+import { ButtonModule } from './shared/components/button/button.module';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,9 @@ import { WelcomePageModule } from './pages/welcome-page/welcome-page.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WelcomePageModule
+    WelcomePageModule,
+    LogoModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
