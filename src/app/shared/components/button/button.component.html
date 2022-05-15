@@ -3,7 +3,7 @@
   type="button"
   (click)="onClick($event)"
   [disabled]="disabled" >
-  <span class="btn-text">{{ text }}</span>
+  <span class="btn-text">{{ text | uppercase }}</span>
   <span *ngIf="icon" class="btn-text icon material-symbols-outlined">
     {{ icon }}
   </span>
