@@ -1,0 +1,9 @@
+<div class="header-container">
+  <app-logo></app-logo>
+
+  <div class="player-container">
+    <p class="player-name">{{ (name$ | async) | uppercase}}</p>
+
+    <p class="player-score">Your score: {{ score$ | async }}</p>
+  </div>
+</div>

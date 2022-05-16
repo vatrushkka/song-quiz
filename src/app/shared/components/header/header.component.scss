@@ -1,0 +1,13 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-container {
+  display: flex;
+  gap: 1rem;
+
+  .player-name {
+    font-weight: 700;
+  }
+}

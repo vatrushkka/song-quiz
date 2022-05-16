@@ -7,6 +7,7 @@ import { QuizPageModule } from './pages/quiz-page/quiz-page.module';
 import { SummaryPageModule} from './pages/summary-page/summary-page.module';
 import { LogoModule } from './shared/components/logo/logo.module';
 import { ButtonModule } from './shared/components/button/button.module';
+import { HeaderModule } from './shared/components/header/header.module';
 
 import { AppComponent } from './app.component';
 
@@ -23,7 +24,8 @@ import { PlayerGuard } from './shared/services/player-guard';
     QuizPageModule,
     SummaryPageModule,
     LogoModule,
-    ButtonModule
+    ButtonModule,
+    HeaderModule
   ],
   providers: [
     PlayerGuard
