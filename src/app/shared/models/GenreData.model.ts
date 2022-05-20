@@ -1,4 +1,4 @@
-import { SongData } from './SongData';
+import { SongData } from './SongData.model';
 
 export interface GenreData {
   "id": number,

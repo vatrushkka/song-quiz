@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SongData } from '../../../../shared/models/SongData';
+import { SongData } from '../../../../shared/models/SongData.model';
 import { environment } from '../../../../../environments/environment.prod';
 import { DataService } from '../../../../shared/services/data.service';
 import { Subscription } from 'rxjs';

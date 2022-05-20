@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DataService } from '../../../../shared/services/data.service';
-import { SongData } from '../../../../shared/models/SongData';
+import { SongData } from '../../../../shared/models/SongData.model';
 import { first } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
