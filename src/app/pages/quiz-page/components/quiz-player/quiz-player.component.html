@@ -1,0 +1,48 @@
+<ng-container *ngIf="song">
+  <div class="player-wrapper">
+
+    <div class="player-btn">
+      <ng-container *ngIf="bgImg">
+        <div *ngIf="isAnswer" class="bg img" [ngStyle]="{ 'background-image': 'url(' + environment.imagePath + song.image + ')'}"></div>
+
+        <img *ngIf="!isAnswer" class="img" src="/assets/img/default-song-bg.png" alt="song image">
+      </ng-container>
+    </div>
+
+<!--    <div class="audio-player">-->
+<!--      <div class="timeline">-->
+<!--        <div class="progress"></div>-->
+<!--      </div>-->
+<!--      <div class="controls">-->
+<!--        <div class="play-container">-->
+<!--          <div class="toggle-play play">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="time">-->
+<!--          <div class="current">0:00</div>-->
+<!--          <div class="divider">/</div>-->
+<!--          <div class="length"></div>-->
+<!--        </div>-->
+<!--        <div class="name">Music Song</div>-->
+<!--        &lt;!&ndash;     credit for icon to https://saeedalipoor.github.io/icono/ &ndash;&gt;-->
+<!--        <div class="volume-container">-->
+<!--          <div class="volume-button">-->
+<!--            <div class="volume icono-volumeMedium"></div>-->
+<!--          </div>-->
+
+<!--          <div class="volume-slider">-->
+<!--            <div class="volume-percentage"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <audio
+      controls
+      [src]="environment.imagePath + song.audio">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
+
+  </div>
+</ng-container>

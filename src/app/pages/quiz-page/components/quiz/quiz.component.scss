@@ -1,0 +1,33 @@
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-wrapper {
+  gap: 3rem;
+  width: 50rem;
+
+  .header {
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: 'Prompt', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+  }
+
+  .description {
+
+  }
+
+  .quiz-player {
+    background-color: #373B62;
+    height: 15rem;
+    border: 1px solid #373B62;
+    border-radius: 5px;
+  }
+
+  .quiz-options {
+    gap: 1rem;
+  }
+}

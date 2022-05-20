@@ -14,11 +14,15 @@
   transform: translateX(-50%);
 }
 
+.summary-wrapper {
+  position: relative;
+}
+
 .union-container {
   position: absolute;
   width: 23rem;
   height: 23rem;
-  top: 17.5rem;
+  top: -13.5rem;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -27,7 +31,7 @@
   width: 100%;
 }
 
-.summary-page-container {
+.summary-container {
   background-color: #1B1D31;
   position: relative;
   width: 110rem;

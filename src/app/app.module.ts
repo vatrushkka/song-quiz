@@ -12,6 +12,7 @@ import { HeaderModule } from './shared/components/header/header.module';
 import { AppComponent } from './app.component';
 
 import { PlayerGuard } from './shared/services/player-guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PlayerGuard } from './shared/services/player-guard';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     WelcomePageModule,
     QuizPageModule,

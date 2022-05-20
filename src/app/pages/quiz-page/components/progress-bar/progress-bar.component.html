@@ -1,0 +1,20 @@
+<div class="progress-bar-container" *ngIf="1">
+  <div class="quiz-progress">
+    <div class="quiz-active"></div>
+    <div class="quiz-finished"></div>
+  </div>
+
+  <ul class="progress-bar-content">
+    <ng-container
+      *ngFor="let tabData of data">
+      <li [ngClass]="+tabData.id < activeTab ? 'finished' : '' || +tabData.id == activeTab ? 'active' : ''" class="genre">{{ tabData.genre | uppercase }}</li>
+      <li [ngClass]="+tabData.id < activeTab ? 'finished' : ''" class="icon material-symbols-outlined">arrow_right_alt</li>
+    </ng-container>
+<!--    <li class="genre">{{ 'rock' | uppercase }}</li>-->
+<!--    <li class="icon material-symbols-outlined">arrow_right_alt</li>-->
+<!--    <li class="genre">{{ 'pop' | uppercase }}</li>-->
+<!--    <li class="icon material-symbols-outlined">arrow_right_alt</li>-->
+<!--    <li class="genre">{{ 'soundtrack' | uppercase }}</li>-->
+<!--    <li class="icon material-symbols-outlined">arrow_right_alt</li>-->
+  </ul>
+</div>

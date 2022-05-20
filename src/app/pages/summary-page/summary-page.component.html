@@ -3,23 +3,25 @@
     <app-logo></app-logo>
   </div>
 
-  <div class="summary-page-container">
-    <div class="score">
-      {{ score$ | async }}
+  <div class="summary-wrapper">
+    <div class="union-container">
+      <img class="union-img" src="assets/img/union.png" alt="">
     </div>
 
-    <h2 class="title">{{ name }}, {{ score == 12 ? 'did so great!' : 'you can do better, try again!' }}</h2>
+    <div class="summary-container">
 
-    <p class="">You've got {{score}} of 12. {{score == 12 ? 'You are definitely a music lover!' : null }}</p>
+      <div class="score">
+        {{ score$ | async }}
+      </div>
 
-    <div class="buttons-container">
-      <app-button (buttonClick)="anotherPlayer()" text="Another player"></app-button>
-      <app-button (buttonClick)="playAgain()" text="Play again" icon="arrow_right_alt"></app-button>
+      <h2 class="title">{{ name | titlecase }}, {{ score >= 10 ? 'did so great!' : 'you can do better, try again!' }}</h2>
+
+      <p class="">You've got {{score}} of 12. {{score >= 10 ? 'You are definitely a music lover!' : null }}</p>
+
+      <div class="buttons-container">
+        <app-button (buttonClick)="anotherPlayer()" text="Another player"></app-button>
+        <app-button (buttonClick)="playAgain()" text="Play again" icon="arrow_right_alt"></app-button>
+      </div>
     </div>
-
-  </div>
-
-  <div class="union-container">
-    <img class="union-img" src="assets/img/union.png" alt="">
   </div>
 </div>

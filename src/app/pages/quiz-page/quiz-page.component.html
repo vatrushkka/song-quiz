@@ -1,11 +1,28 @@
-<div class="page-container">
-  <div class="welcome-page-container">
-    <div *ngIf="player$ | async as player">
-      {{ player }}, {{ score }}
+<div class="page-container center">
+  <div class="quiz-page-container center">
+    <app-header style="width: 100%"></app-header>
+
+    <div class="quiz-wrapper">
+      <app-progress-bar [data]="data"></app-progress-bar>
+
+      <div class="quiz-container">
+        <app-quiz (answered)="changeButton()" (showSong)="setSongAndScore($event)" [tab]="activeTab"></app-quiz>
+
+        <div class="song-info-container">
+          <ng-container *ngIf="data">
+            <app-song-info [song]="data[activeTab - 1].data[activeSong - 1]" [position]="activeSong"></app-song-info>
+          </ng-container>
+        </div>
+      </div>
+
     </div>
 
-    <app-button (buttonClick)="onAddPoints()" text="Add points"></app-button>
-    <app-button (buttonClick)="setUser()" text="setUser"></app-button>
-    <app-button (buttonClick)="nextPage()" text="next page"></app-button>
+    <div class="next-page-container">
+      <app-button
+        (buttonClick)="nextQuestion()"
+        [disabled]="!isAnswer"
+        text="{{activeTab === 4 ? 'see my score' : 'next question'}}"
+        icon="arrow_right_alt"></app-button>
+    </div>
   </div>
 </div>

@@ -31,6 +31,7 @@ export class SummaryPageComponent implements OnInit {
 
   playAgain(): void {
     this.playerService.startGame(this.name);
+
     this.router.navigate(['quiz']);
   }
 

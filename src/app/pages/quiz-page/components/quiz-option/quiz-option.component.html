@@ -1,0 +1,10 @@
+<div class="option-wrapper"
+     (click)="onCheck()"
+     [ngClass]="isClicked && index === answer ? 'quiz-correct' : '' || isClicked && index != answer ? 'quiz-wrong' : ''">
+  <div class="quiz-select">
+    <span class="material-symbols-outlined correct-icon">done</span>
+    <span class=" material-symbols-outlined wrong-icon">close</span>
+  </div>
+
+  <p>{{ index.toString().padStart(2, '0') }}: {{ song.name }} – {{ song.songTitle }}</p>
+</div>

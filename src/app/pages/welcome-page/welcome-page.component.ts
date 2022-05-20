@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PlayerService } from '../../shared/services/player.service';
 import { Router } from '@angular/router';
+import {DataService} from '../../shared/services/data.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -17,7 +18,8 @@ export class WelcomePageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private playerService: PlayerService,
-    private router: Router
+    private router: Router,
+    private dataService: DataService
   ) {
   }
 
@@ -26,6 +28,7 @@ export class WelcomePageComponent implements OnInit {
 
   startQuiz(name): void {
     this.playerService.startGame(name);
+    this.dataService.setActiveTab(1);
     this.router.navigate(['/quiz']);
   }
 }

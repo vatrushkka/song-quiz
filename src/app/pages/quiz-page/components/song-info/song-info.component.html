@@ -1,0 +1,20 @@
+<div class="song-info-container">
+  <ng-container *ngIf="song; else defaultImage">
+    <p class="song-title">{{ position.toString().padStart(2, '0') }}: {{ song.name }} – {{ song.songTitle }}</p>
+
+    <div class="image-container">
+      <div class="img">
+        <img [src]="environment.imagePath + song.image" alt="{{ song.name }}">
+      </div>
+
+      <app-quiz-player [song]="song"></app-quiz-player>
+    </div>
+
+    <p class="song-description">{{ song.description }}</p>
+
+  </ng-container>
+
+  <ng-template #defaultImage>
+    <img src="assets/img/union.png" class="quiz-bg-img" alt="union">
+  </ng-template>
+</div>
