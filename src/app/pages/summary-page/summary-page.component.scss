@@ -29,3 +29,41 @@
   display: flex;
   gap: 2rem;
 }
+
+@media (max-width: 800px) {
+  .buttons-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 451px) {
+
+  .score {
+    top: -6rem;
+    width: 9rem;
+    height: 9rem;
+    font-size: 3rem;
+  }
+
+  .union-container {
+    width: 21rem;
+    height: 21rem;
+    top: -12rem;
+  }
+}
+//
+@media (max-width: 450px) {
+  .score {
+    top: -5rem;
+    width: 8rem;
+    height: 8rem;
+    font-size: 3rem;
+  }
+
+  .union-container {
+    width: 19rem;
+    height: 19rem;
+    top: -10.5rem;
+  }
+}

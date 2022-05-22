@@ -28,3 +28,15 @@ body {
 ul {
   list-style: none;
 }
+
+@media (max-width: 800px) and (min-width: 451px){
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 8px;
+  }
+}

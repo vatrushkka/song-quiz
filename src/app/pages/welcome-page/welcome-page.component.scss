@@ -3,7 +3,7 @@
 .welcome-input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid $border-light;
+  border-bottom: 2px solid $border-light;
   width: 70%;
   text-align: center;
   padding: 2rem;
@@ -32,5 +32,27 @@ input::placeholder {
 input:hover {
   &::placeholder {
     opacity: .5;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 451px){
+  .welcome-input {
+    width: 90%;
+  }
+}
+
+@media (max-width: 450px){
+  .welcome-input {
+    width: 90%;
+
+    &:focus {
+      &::placeholder {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  input::placeholder {
+    font-size: 1.2rem;
   }
 }
