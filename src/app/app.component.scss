@@ -1,7 +1,9 @@
+@import "src/styles/main";
+
 .background {
   width: 100%;
   height: 100%;
-  background-color: #12131E;
+  background-color: $bg-app;
   position: absolute;
   top: 0;
   overflow: hidden;
