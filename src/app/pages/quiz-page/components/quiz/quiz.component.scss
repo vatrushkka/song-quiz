@@ -4,11 +4,11 @@
 }
 
 .quiz-wrapper {
-  gap: 3rem;
+  gap: 4rem;
   width: 50rem;
 
   .header {
-    padding-bottom: 1rem;
+    padding-bottom: 1.1rem;
     text-transform: uppercase;
     font-family: 'Prompt', sans-serif;
     font-size: 3rem;
@@ -29,5 +29,11 @@
 
   .quiz-options {
     gap: 1rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .quiz-wrapper {
+    width: 100%;
   }
 }

@@ -29,7 +29,7 @@
   overflow: hidden;
 
   .img {
-    height: 35rem;
+    height: 33rem;
     overflow: hidden;
   }
 }
@@ -45,4 +45,11 @@
 img {
   object-fit: cover;
   max-width: 100%;
+}
+
+@media (max-width: 1250px) {
+  .song-description {
+    text-align: center;
+    display: block;
+  }
 }

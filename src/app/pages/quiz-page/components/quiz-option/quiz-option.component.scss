@@ -30,7 +30,7 @@
 }
 
 .correct-icon, .wrong-icon {
-  display: none;
+  visibility: hidden;
 }
 
 .quiz-correct {
@@ -46,7 +46,11 @@
   }
 
   .correct-icon {
-    display: block;
+    visibility: visible;
+  }
+
+  .wrong-icon {
+    display: none;
   }
 }
 
@@ -63,6 +67,18 @@
   }
 
   .wrong-icon {
-    display: block;
+    visibility: visible;
+  }
+
+  .correct-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .correct-icon, .wrong-icon {
+    font-size: 2rem;
+    width: 3rem;
+    text-align: center;
   }
 }

@@ -4,7 +4,12 @@
 .quiz-page-container {
   flex-direction: column;
   width: 150rem;
-  height: 85rem;
+  padding: 5rem 0;
+  transition: all .2s;
+}
+
+.quiz-header {
+  width: 100%;
 }
 
 .quiz-wrapper {
@@ -33,4 +38,78 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+
+@media (max-width: 1550px) and (min-width: 1351px) {
+  .quiz-page-container {
+    width: 130rem;
+  }
+
+  .quiz-container {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 1350px) and (min-width: 1251px) {
+  .quiz-page-container {
+    width: 120rem;
+  }
+
+  .quiz-container {
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 1250px) and (min-width: 1101px) {
+  .quiz-page-container {
+    width: 100rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .quiz-container {
+    flex-direction: column;
+    gap: 5rem;
+    padding: 3rem 6rem;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 951px) {
+  .quiz-page-container {
+    width: 85rem;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 651px) {
+  .quiz-page-container {
+    width: 70rem;
+  }
+
+  .quiz-container {
+    padding: 5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .quiz-page-container {
+    width: 100%;
+  }
+
+  .quiz-container {
+    padding: 4rem;
+  }
+
+  .quiz-header {
+    padding: 0 1rem;
+  }
+
+  .next-page-container {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .quiz-container {
+    padding: 3rem;
+  }
 }
