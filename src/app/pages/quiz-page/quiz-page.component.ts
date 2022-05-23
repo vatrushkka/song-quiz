@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../../shared/services/player.service';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { DataService } from '../../shared/services/data.service';
 import { GenreData } from '../../shared/models/GenreData.model';
@@ -23,17 +23,15 @@ export class QuizPageComponent implements OnInit {
   dataSub: Subscription;
   activeTabSub: Subscription;
 
+  dataLoader = new BehaviorSubject<boolean>(false);
+
   constructor(private playerService: PlayerService, private router: Router, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.questionScore = 4;
+    this.dataLoader.next(true);
 
     this.dataService.setActiveTab(1)
-
-    this.dataSub = this.dataService.getData().subscribe(data => {
-      this.dataService.setData(data);
-      this.data = data;
-    });
 
     this.scoreSub = this.playerService.score$.subscribe(val => {
       this.score = val;
@@ -41,7 +39,13 @@ export class QuizPageComponent implements OnInit {
 
     this.activeTabSub = this.dataService.activeTab$.subscribe(tab => {
       this.activeTab = tab;
-    })
+    });
+
+    this.dataSub = this.dataService.getData().subscribe(data => {
+      this.dataService.setData(data);
+      this.data = data;
+      this.dataLoader.next(false);
+    });
   }
 
   onAddPoints(questionPoints): void {
@@ -79,7 +83,7 @@ export class QuizPageComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.scoreSub.unsubscribe();
-    this.dataSub.unsubscribe();
     this.activeTabSub.unsubscribe();
+    this.dataSub.unsubscribe();
   }
 }

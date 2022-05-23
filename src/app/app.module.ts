@@ -8,6 +8,7 @@ import { SummaryPageModule} from './pages/summary-page/summary-page.module';
 import { LogoModule } from './shared/components/logo/logo.module';
 import { ButtonModule } from './shared/components/button/button.module';
 import { HeaderModule } from './shared/components/header/header.module';
+import { LoaderModule } from './shared/loader/loader.module';
 
 import { AppComponent } from './app.component';
 
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     SummaryPageModule,
     LogoModule,
     ButtonModule,
-    HeaderModule
+    HeaderModule,
+    LoaderModule
   ],
   providers: [
     PlayerGuard

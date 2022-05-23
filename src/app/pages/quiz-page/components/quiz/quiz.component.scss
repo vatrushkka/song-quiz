@@ -32,6 +32,14 @@
   }
 }
 
+.loader {
+  height: 58.8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1250px) {
   .quiz-wrapper {
     width: 100%;

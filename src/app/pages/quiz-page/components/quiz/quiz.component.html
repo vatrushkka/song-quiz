@@ -1,20 +1,27 @@
 <ng-container *ngIf="data && activeTab">
   <div class="quiz-wrapper col">
-    <div class="quiz-header col">
-      <h1 class="header">{{ data[activeTab - 1].genre }} song</h1>
 
-      <p class="description">Listen to the audio and guess what song is it from the list</p>
-    </div>
+    <ng-container *ngIf="!(dataLoading | async); else loadingBlock">
+      <div class="quiz-header col">
+        <h1 class="header">{{ data[activeTab - 1].genre }} song</h1>
 
-    <app-quiz-player [bgImg]="true" [song]="data[activeTab - 1].data[answer - 1]" class="quiz-player"></app-quiz-player>
+        <p class="description">Listen to the audio and guess what song is it from the list</p>
+      </div>
 
-    <div class="quiz-options col">
-      <ng-container *ngFor="let song of data[activeTab - 1].data; index as i">
-        <app-quiz-option (click)="onCheckAnswer(i + 1)"
-                         (showSong)="onShowSong($event)"
-                         [index]="i+1"
-                         [song]="song"></app-quiz-option>
-      </ng-container>
-    </div>
+      <app-quiz-player [bgImg]="true" [song]="data[activeTab - 1].data[answer - 1]" class="quiz-player"></app-quiz-player>
+
+      <div class="quiz-options col">
+        <ng-container *ngFor="let song of data[activeTab - 1].data; index as i">
+          <app-quiz-option (click)="onCheckAnswer(i + 1)"
+                           (showSong)="onShowSong($event)"
+                           [index]="i+1"
+                           [song]="song"></app-quiz-option>
+        </ng-container>
+      </div>
+    </ng-container>
+
+    <ng-template #loadingBlock>
+      <app-loader class="loader"></app-loader>
+    </ng-template>
   </div>
 </ng-container>

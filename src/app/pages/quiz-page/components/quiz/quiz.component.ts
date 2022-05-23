@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GenreData } from '../../../../shared/models/GenreData.model';
 import { DataService } from '../../../../shared/services/data.service';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-quiz',
@@ -24,11 +24,15 @@ export class QuizComponent implements OnInit {
   isAnswerSub: Subscription;
   dataSub: Subscription;
 
+  dataLoading = new BehaviorSubject<boolean>(false);
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataLoading.next(true);
     this.activeTabSub = this.dataService.activeTab$.subscribe(tab => {
       this.activeTab = tab;
+      this.dataLoading.next(false);
     });
 
     this.dataSub = this.dataService.data$.subscribe(data => {

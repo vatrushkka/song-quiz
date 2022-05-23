@@ -10,6 +10,7 @@ import { QuizOptionComponent } from './components/quiz-option/quiz-option.compon
 import { QuizComponent } from './components/quiz/quiz.component';
 import { QuizPlayerComponent } from './components/quiz-player/quiz-player.component';
 import { SongInfoComponent } from './components/song-info/song-info.component';
+import { LoaderModule } from '../../shared/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import { SongInfoComponent } from './components/song-info/song-info.component';
     QuizPlayerComponent,
     SongInfoComponent
   ],
-  imports: [
-    CommonModule,
-    QuizPageRoutingModule,
-    ButtonModule,
-    HeaderModule
-  ],
+    imports: [
+        CommonModule,
+        QuizPageRoutingModule,
+        ButtonModule,
+        HeaderModule,
+        LoaderModule
+    ],
   exports: [
     QuizPageComponent
   ]

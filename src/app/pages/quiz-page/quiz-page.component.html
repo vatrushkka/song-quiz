@@ -2,27 +2,33 @@
   <div class="quiz-page-container gap-1 center">
     <app-header class="quiz-header"></app-header>
 
-    <div class="quiz-wrapper w-100 o-hidden">
-      <app-progress-bar [data]="data"></app-progress-bar>
+    <ng-container *ngIf="!(dataLoader | async); else loaderBlock">
+      <div class="quiz-wrapper w-100 o-hidden">
+        <app-progress-bar [data]="data"></app-progress-bar>
 
-      <div class="quiz-container">
-        <app-quiz (answered)="changeButton()" (showSong)="setSongAndScore($event)" [tab]="activeTab"></app-quiz>
+        <div class="quiz-container">
+          <app-quiz (answered)="changeButton()" (showSong)="setSongAndScore($event)" [tab]="activeTab"></app-quiz>
 
-        <div class="song-info-container">
-          <ng-container *ngIf="data">
-            <app-song-info [song]="data[activeTab - 1].data[activeSong - 1]" [position]="activeSong"></app-song-info>
-          </ng-container>
+          <div class="song-info-container">
+            <ng-container *ngIf="data">
+
+              <app-song-info [song]="data[activeTab - 1].data[activeSong - 1]" [position]="activeSong"></app-song-info>
+            </ng-container>
+          </div>
         </div>
       </div>
 
-    </div>
+      <div class="next-page-container">
+        <app-button
+          (buttonClick)="nextQuestion()"
+          [disabled]="!isAnswer"
+          text="{{activeTab === 4 ? 'see my score' : 'next question'}}"
+          icon="arrow_right_alt"></app-button>
+      </div>
+    </ng-container>
 
-    <div class="next-page-container">
-      <app-button
-        (buttonClick)="nextQuestion()"
-        [disabled]="!isAnswer"
-        text="{{activeTab === 4 ? 'see my score' : 'next question'}}"
-        icon="arrow_right_alt"></app-button>
-    </div>
+    <ng-template #loaderBlock>
+      <app-loader></app-loader>
+    </ng-template>
   </div>
 </div>
