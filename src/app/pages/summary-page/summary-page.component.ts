@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./summary-page.component.scss']
 })
 export class SummaryPageComponent implements OnInit {
-  player$ = this.playerService.player$;
-  score$ = this.playerService.score$
   name: string;
   score: number;
 
@@ -24,8 +22,8 @@ export class SummaryPageComponent implements OnInit {
       this.name = name;
     })
 
-    this.subScore = this.playerService.score$.subscribe(name => {
-      this.score = name;
+    this.subScore = this.playerService.score$.subscribe(score => {
+      this.score = score;
     })
   }
 

@@ -4,7 +4,7 @@ import { GenreData } from '../models/GenreData.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 
 export class DataService {
@@ -23,11 +23,11 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getData() {
-    return this.http.get<GenreData[]>('https://levi9-song-quiz.herokuapp.com/api/data')
+    return this.http.get<GenreData[]>('https://levi9-song-quiz.herokuapp.com/api/data');
   }
 
   setData(data: GenreData[]): void {
-    this._data$.next(data)
+    this._data$.next(data);
   }
 
   setCorrectAnswer() {

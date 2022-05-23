@@ -11,7 +11,7 @@
     <div class="page-container-m pos-rel align-center-col gap-2 z-1">
 
       <div class="score">
-        {{ score$ | async }}
+        {{ score }}
       </div>
 
       <h2 class="title-m">{{ name | titlecase }}, {{ score >= 10 ? 'did so great!' : 'you can do better, try again!' }}</h2>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomePageModule } from './pages/welcome-page/welcome-page.module';
@@ -8,12 +9,11 @@ import { SummaryPageModule} from './pages/summary-page/summary-page.module';
 import { LogoModule } from './shared/components/logo/logo.module';
 import { ButtonModule } from './shared/components/button/button.module';
 import { HeaderModule } from './shared/components/header/header.module';
-import { LoaderModule } from './shared/loader/loader.module';
+import { LoaderModule } from './shared/components/loader/loader.module';
 
 import { AppComponent } from './app.component';
 
 import { PlayerGuard } from './shared/services/player-guard';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [

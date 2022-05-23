@@ -17,5 +17,4 @@ export class SongInfoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

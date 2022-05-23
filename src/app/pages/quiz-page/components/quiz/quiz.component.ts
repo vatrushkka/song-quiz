@@ -11,8 +11,8 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 export class QuizComponent implements OnInit {
 
   @Input() tab: number;
-  @Output() answered = new EventEmitter()
-  @Output() showSong = new EventEmitter()
+  @Output() answered = new EventEmitter();
+  @Output() showSong = new EventEmitter();
 
   data: GenreData[];
   activeTab: number;
@@ -56,7 +56,7 @@ export class QuizComponent implements OnInit {
   }
 
   onShowSong($event): void {
-    this.showSong.emit($event)
+    this.showSong.emit($event);
   }
 
   ngOnDestroy(): void {

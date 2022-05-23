@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PlayerService } from '../../shared/services/player.service';
 import { Router } from '@angular/router';
-import {DataService} from '../../shared/services/data.service';
+import { DataService } from '../../shared/services/data.service';
 
 @Component({
   selector: 'app-welcome-page',

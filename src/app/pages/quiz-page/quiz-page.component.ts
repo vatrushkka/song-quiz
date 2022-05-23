@@ -31,7 +31,7 @@ export class QuizPageComponent implements OnInit {
     this.questionScore = 4;
     this.dataLoader.next(true);
 
-    this.dataService.setActiveTab(1)
+    this.dataService.setActiveTab(1);
 
     this.scoreSub = this.playerService.score$.subscribe(val => {
       this.score = val;
@@ -51,7 +51,7 @@ export class QuizPageComponent implements OnInit {
   onAddPoints(questionPoints): void {
     let points = this.score + questionPoints;
 
-    this.playerService.addPoints(points)
+    this.playerService.addPoints(points);
   }
 
   changeButton(): void {
@@ -63,7 +63,7 @@ export class QuizPageComponent implements OnInit {
 
   nextQuestion(): void {
     if (this.activeTab === 4) {
-      this.router.navigate(['summary'])
+      this.router.navigate(['summary']);
     } else {
       this.changeButton();
       this.dataService.setActiveTab(this.activeTab + 1);

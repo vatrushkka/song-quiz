@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {SummaryPageComponent} from './summary-page.component';
+import { SummaryPageComponent}  from './summary-page.component';
 
 const routes: Routes = [
   {
