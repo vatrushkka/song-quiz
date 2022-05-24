@@ -1,5 +1,5 @@
 <ng-container *ngIf="song">
-  <div class="player-wrapper">
+  <div class="player-wrapper" [ngClass]="bgImg ? 'padding' : ''">
 
     <div class="player-btn">
       <ng-container *ngIf="bgImg">
