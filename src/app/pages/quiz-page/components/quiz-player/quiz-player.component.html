@@ -9,25 +9,25 @@
       </ng-container>
 
       <div [ngClass]="bgImg ? 'position' : ''" class="button-container">
-         <span  class="material-symbols-outlined play-pause-btn" (click)="togglePlaying()">
-        {{playing ? 'pause_circle' : 'play_circle'}}
+         <span class="material-symbols-outlined play-btn" (click)="togglePlaying()">
+        {{state.playing ? 'pause_circle' : 'play_circle'}}
        </span>
       </div>
     </div>
 
     <div class="player-container">
       <input [formControl]="value"
-             [ngStyle]="{'background-size': currentProgress + '% 100%'}"
+             [ngStyle]="{'background-size': (100 / state.duration * state.currentTime) + '% 100%'}"
              type="range"
-             min="0" [max]="songLength"
+             min="0" [max]="state.duration"
              step="0.1"
-             [value]="currentLength"
+             [value]="state.currentTime"
              class="player">
 
       <div class="player-time-container">
-        <p>--:--</p>
+        <p>{{state ? state.readableCurrentTime : '--:--'}}</p>
 
-        <p>--:--</p>
+        <p>{{state ? state.readableDuration : '--:--'}}</p>
       </div>
     </div>
 
