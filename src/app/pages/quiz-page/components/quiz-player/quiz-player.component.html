@@ -7,14 +7,38 @@
 
         <img *ngIf="!isAnswer" class="img" src="/assets/img/default-song-bg.png" alt="song image">
       </ng-container>
+
+      <div [ngClass]="bgImg ? 'position' : ''" class="button-container">
+         <span  class="material-symbols-outlined play-pause-btn" (click)="togglePlaying()">
+        {{playing ? 'pause_circle' : 'play_circle'}}
+       </span>
+      </div>
     </div>
 
-    <audio
-      controls
-      [src]="environment.imagePath + song.audio">
-      Your browser does not support the
-      <code>audio</code> element.
-    </audio>
+    <div class="player-container">
+      <input [formControl]="value"
+             [ngStyle]="{'background-size': currentProgress + '% 100%'}"
+             type="range"
+             min="0" [max]="songLength"
+             step="0.1"
+             [value]="currentLength"
+             class="player">
+
+      <div class="player-time-container">
+        <p>--:--</p>
+
+        <p>--:--</p>
+      </div>
+    </div>
+
+<!--    <p>{{ value.value }}</p>-->
+
+<!--    <audio-->
+<!--      controls-->
+<!--      [src]="environment.imagePath + song.audio">-->
+<!--      Your browser does not support the-->
+<!--      <code>audio</code> element.-->
+<!--    </audio>-->
 
   </div>
 </ng-container>

@@ -7,7 +7,9 @@
         <img [src]="environment.imagePath + song.image" alt="{{ song.name }}">
       </div>
 
-      <app-quiz-player [song]="song"></app-quiz-player>
+      <div class="player">
+        <app-quiz-player [song]="song"></app-quiz-player>
+      </div>
     </div>
 
     <p class="song-description">{{ song.description }}</p>
