@@ -14,9 +14,9 @@
         {{ score }}
       </div>
 
-      <h2 class="title-m">{{ name | titlecase }}, {{ score >= 10 ? 'did so great!' : 'you can do better, try again!' }}</h2>
+      <h2 class="title-m">{{ name | titlecase }}, {{ score >= tabsAmount * 3 - 2 ? 'did so great!' : 'you can do better, try again!' }}</h2>
 
-      <p class="text-m">You've got {{score}} of 12. {{score >= 10 ? 'You are definitely a music lover!' : null }}</p>
+      <p class="text-m">You've got {{ score }} of {{ tabsAmount * 3 }}. {{score >= tabsAmount * 3 - 2 ? 'You are definitely a music lover!' : null }}</p>
 
       <div class="buttons-container">
         <app-button (buttonClick)="anotherPlayer()" text="Another player"></app-button>
