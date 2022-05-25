@@ -29,10 +29,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(167, 105, 195, 1) 70%, rgba(255,255,255,0) 100%);
-    transition: width .2s;
+    background: linear-gradient(90deg, rgba(167, 105, 195, 1) 90%, rgba(255,255,255,0) 100%);
+    transition: width 1s;
   }
   .final-finished {
     background-color: rgba(167, 105, 195, 1);
@@ -43,9 +42,8 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 70%;
     background: linear-gradient(90deg, #cbd5e1 70%, rgba(255,255,255,0) 100%);
-    transition: width .2s;
+    transition: width 1s;
   }
 
   .final {
