@@ -11,6 +11,9 @@ export class DataService {
   private _data$ = new BehaviorSubject<GenreData[] | null>(null);
   data$ = this._data$;
 
+  private _tabsAmount$ = new BehaviorSubject<number>(0);
+  tabsAmount$ = this._tabsAmount$.asObservable();
+
   private _activeTab$ = new BehaviorSubject<number>(1);
   activeTab$ = this._activeTab$.asObservable();
 
@@ -28,6 +31,7 @@ export class DataService {
 
   setData(data: GenreData[]): void {
     this._data$.next(data);
+    this._tabsAmount$.next(data.length)
   }
 
   setCorrectAnswer() {

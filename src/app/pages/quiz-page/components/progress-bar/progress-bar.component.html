@@ -1,7 +1,15 @@
 <div class="progress-bar-container" *ngIf="1">
   <div class="quiz-progress">
-    <div class="quiz-active"></div>
-    <div class="quiz-finished"></div>
+    <div
+      *ngIf="!answered"
+      [ngStyle]="{'width': currentWidth + '%'}"
+      [ngClass]="currentWidth == 100 ? 'final' : ''"
+      class="quiz-active"></div>
+
+    <div
+      [ngStyle]="{'width': (answered ? currentWidth : width) + '%'}"
+      [ngClass]="width == 100 ? 'final-finished' : ''"
+      class="quiz-finished"></div>
   </div>
 
   <ul class="progress-bar-content">
