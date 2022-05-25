@@ -14,6 +14,7 @@
         <ng-container *ngFor="let song of data[activeTab - 1].data; index as i">
           <app-quiz-option (click)="onCheckAnswer(i + 1)"
                            (showSong)="onShowSong($event)"
+                           (setScore)="emitScoreChange()"
                            [index]="i+1"
                            [song]="song"></app-quiz-option>
         </ng-container>

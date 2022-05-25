@@ -13,6 +13,7 @@ export class QuizOptionComponent implements OnInit {
   @Input() song: SongData;
   @Input() index: number;
   @Output() showSong = new EventEmitter;
+  @Output() setScore = new EventEmitter;
 
   isAnswer: boolean;
   isClicked: boolean;
@@ -29,8 +30,9 @@ export class QuizOptionComponent implements OnInit {
   }
 
   onCheck(): void {
-    if (!this.isAnswer) {
+    if (!this.isAnswer && !this.isClicked) {
       this.isClicked = true;
+      this.setScore.emit();
     }
     this.showSong.emit(this.index);
   }

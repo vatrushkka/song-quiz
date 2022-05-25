@@ -7,7 +7,7 @@
         <app-progress-bar [data]="data"></app-progress-bar>
 
         <div class="quiz-container">
-          <app-quiz (answered)="changeButton()" (showSong)="setSongAndScore($event)" [tab]="activeTab"></app-quiz>
+          <app-quiz (answered)="changeButton()" (showSong)="setSong($event)" (setScore)="setScore()" [tab]="activeTab"></app-quiz>
 
           <div class="song-info-container">
             <ng-container *ngIf="data">

@@ -13,6 +13,7 @@ export class QuizComponent implements OnInit {
   @Input() tab: number;
   @Output() answered = new EventEmitter();
   @Output() showSong = new EventEmitter();
+  @Output() setScore = new EventEmitter();
 
   data: GenreData[];
   activeTab: number;
@@ -46,6 +47,10 @@ export class QuizComponent implements OnInit {
     this.isAnswerSub = this.dataService.isCorrectAnswer$.subscribe(val => {
       this.isCorrectAnswer = val;
     });
+  }
+
+  emitScoreChange(): void {
+    this.setScore.emit();
   }
 
   onCheckAnswer(index: number): void {

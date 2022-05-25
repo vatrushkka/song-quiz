@@ -74,8 +74,11 @@ export class QuizPageComponent implements OnInit {
     this.dataService.switchIsAnswer(false);
   }
 
-  setSongAndScore($event): void {
+  setSong($event): void {
     this.activeSong = $event;
+  }
+
+  setScore(): void {
     if (!this.isAnswer) {
       this.questionScore -= 1;
     }
