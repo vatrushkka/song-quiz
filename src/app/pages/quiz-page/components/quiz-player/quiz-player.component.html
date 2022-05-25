@@ -3,9 +3,7 @@
 
     <div class="player-btn">
       <ng-container *ngIf="bgImg">
-        <div *ngIf="isAnswer" class="bg img" [ngStyle]="{ 'background-image': 'url(' + environment.songPath + song.image + ')'}"></div>
-
-        <img *ngIf="!isAnswer" class="img" src="/assets/img/default-song-bg.png" alt="song image">
+        <div class="bg img" [ngStyle]="{ 'background-image': 'url(' + (isAnswer ? environment.songPath + song.image : 'assets/img/default-song-bg.png') + ')'}"></div>
       </ng-container>
 
       <div [ngClass]="bgImg ? 'position' : ''" class="button-container">
