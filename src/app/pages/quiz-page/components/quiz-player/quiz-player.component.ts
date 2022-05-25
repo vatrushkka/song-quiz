@@ -60,11 +60,11 @@ export class QuizPlayerComponent implements OnInit {
 
     // console.log(this.song.name);
     this.value = new FormControl(this.state.currentTime);
-    this.songSrc = environment.imagePath + this.song.audio;
+    this.songSrc = environment.songPath + this.song.audio;
 
     this.answerSub = this.dataService.isCorrectAnswer$.subscribe(val => this.isAnswer = val);
 
-    this.audioSub = this.playStream(this.songSrc).subscribe();
+    this.audioSub = this.streamObservable(this.songSrc).subscribe();
 
     this.stateSub = this.getState().subscribe(states => {
       this.state = states;
@@ -76,8 +76,9 @@ export class QuizPlayerComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.songSrc = environment.imagePath + changes.song.currentValue.audio;
-    this.audioSub = this.playStream(this.songSrc).subscribe();
+    this.songSrc = environment.songPath + changes.song.currentValue.audio;
+    this.state.playing = false;
+    this.audioSub = this.streamObservable(this.songSrc).subscribe();
   }
 
   private streamObservable(url) {
@@ -131,10 +132,6 @@ export class QuizPlayerComponent implements OnInit {
   formatTime(time: number, format: string = 'mm:ss') {
     const momentTime = time * 1000;
     return moment.utc(momentTime).format(format);
-  }
-
-  playStream(url) {
-    return this.streamObservable(url);
   }
 
   play() {

@@ -3,7 +3,7 @@
 
     <div class="player-btn">
       <ng-container *ngIf="bgImg">
-        <div *ngIf="isAnswer" class="bg img" [ngStyle]="{ 'background-image': 'url(' + environment.imagePath + song.image + ')'}"></div>
+        <div *ngIf="isAnswer" class="bg img" [ngStyle]="{ 'background-image': 'url(' + environment.songPath + song.image + ')'}"></div>
 
         <img *ngIf="!isAnswer" class="img" src="/assets/img/default-song-bg.png" alt="song image">
       </ng-container>
@@ -30,8 +30,6 @@
         <p>{{state ? state.readableDuration : '--:--'}}</p>
       </div>
     </div>
-
-<!--    <p>{{ value.value }}</p>-->
 
 <!--    <audio-->
 <!--      controls-->
