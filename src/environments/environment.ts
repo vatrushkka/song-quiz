@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  imagePath: 'https://levi9-song-quiz.herokuapp.com/api/',
-  songPath: 'https://levi9-song-quiz.herokuapp.com/api/'
+  // imagePath: 'https://levi9-song-quiz.herokuapp.com/api/',
+  imagePath: 'assets/',
+  // songPath: 'https://levi9-song-quiz.herokuapp.com/api/'
+  songPath: 'assets/'
 };
 
 /*

@@ -26,7 +26,8 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getData() {
-    return this.http.get<GenreData[]>('https://levi9-song-quiz.herokuapp.com/api/data');
+    // return this.http.get<GenreData[]>('https://levi9-song-quiz.herokuapp.com/api/data');
+    return this.http.get<GenreData[]>('assets/data.json');
   }
 
   setData(data: GenreData[]): void {

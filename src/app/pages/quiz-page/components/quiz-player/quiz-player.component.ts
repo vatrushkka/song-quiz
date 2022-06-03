@@ -52,13 +52,10 @@ export class QuizPlayerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-
     this.dataSub = this.dataService.data$.subscribe(data => {
       this.data = data;
     });
 
-    // console.log(this.song.name);
     this.value = new FormControl(this.state.currentTime);
     this.songSrc = environment.songPath + this.song.audio;
 
